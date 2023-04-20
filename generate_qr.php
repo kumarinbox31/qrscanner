@@ -9,14 +9,31 @@
   <body>
 
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-
 <div  class="container mt-4">
+<?php
+if(isset($_POST['qr_generate'])){
+  $url = $_POST['url'];
+?>
     <div id="qrcode"></div>
     <script type="text/javascript">
-    new QRCode(document.getElementById("qrcode"), "https://webfire.in");
+    new QRCode(document.getElementById("qrcode"), "<?=$url?>");
     </script>
+<?php
+}else{
+  ?>
+ <form method='POST' action="">
+    <div class="form-group">
+      <label>URL</label>
+      <input type="text" name="url" class="form-control">
+    </div>
+    <div class="form-group mt-4">
+      <button type="submit" name="qr_generate" class="btn btn-info">Get</button>
+    </div>
+</form>
+<?php
+}
+?>
 </div>
-
 <!-- <div id="qrcode-2"></div> -->
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode-2"), {

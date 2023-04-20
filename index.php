@@ -35,17 +35,18 @@
             if (decodedText !== lastResult) {
                 ++countResults;
                 lastResult = decodedText;
+                window.location.href=decodedText;
+                return false;
                 // Handle on success condition with the decoded message.
                 console.log(`Scan result ${decodedText}`, decodedResult);
                 var data = JSON.stringify(decodedResult);
-                alert('hi');
                 $.ajax({
                     url:'ajax.php',
                     type:'post',
                     dataType:'json',
-                    data:data,
+                    data:{url:decodedText},
                     success:function(res){
-                        console.log(res);
+                        window.location.href=res.url;
                     }
                 });
             }
