@@ -5,12 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
     <div class="container mt-4">
+        <button id="speakButton" class="btn btn-warning"><i class="fa fa-microphone fa-2x"></i></button>
+        <button id="pauseButton" class="btn btn-danger"><i class="fa fa-pause fa-2x"></i></button>
+        <button id="resumeButton" class="btn btn-info"><i class="fa fa-play fa-2x"></i></button>
+    </div>
+    <div class="container mt-4" id="textToSpeak">
         <div class="container-fluid">
             <header class="mw-body-header vector-page-titlebar"
                 style="display: flex; justify-content: flex-end; box-shadow: #a2a9b1 0px 1px; align-items: center; grid-area: titlebar / titlebar / titlebar / titlebar; color: #202122; font-size: 16px; background-color: #ffffff;">
@@ -858,9 +864,8 @@ You can view its source [alt-shift-e]" href="https://en.wikipedia.org/w/index.ph
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="read.js"></script>
 </body>
 
 </html>
