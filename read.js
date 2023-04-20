@@ -16,13 +16,13 @@ function readContent(){
   // Set the voice and language
   utterance.voice = speechSynthesis.getVoices()[0]; // Use the first voice
   utterance.lang = 'en-US'; // Set the language to US English
-
   // Speak the text
   speechSynthesis.speak(utterance);
 }
 
 // When the button is clicked, speak the text
 speakButton.addEventListener('click', () => {
+  speechSynthesis.resume();
   readContent();
   $('#speakButton').hide();
   $('#pauseButton').show();
